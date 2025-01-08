@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reprotes</title>
+    <style>
+        /* Contenedor flexible */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1> Reporte </h1>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in reporte %}
+            <p> {{value[0]}} : {{value[1]}}</p>
+            {% endfor %}
+            <a href="/reportes/eliminar,{{reporte.pk}}"><button type="button">Eliminar</button></a>
+            
+        </tbody>
+        
+</body>
+</html>

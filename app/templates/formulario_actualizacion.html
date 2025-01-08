@@ -1,0 +1,57 @@
+<!-- templates/update_reporte.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Reporte</title>
+</head>
+<body>
+    <h1>Actualizar Formulario</h1>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <form method="patch" action="/reportes/update,{reporte_pk}" enctype="multipart/form-data">
+        <label for="{{ reporte_pk }}">Pk de reporte</label>
+        <input type="number" id="reporte_pk" name="reporte_pk" value="{{reporte.pk}}"><b></b>
+
+        <label for="numero_documento">Numero Documento:</label>
+        <input type="text" id="reporte.numero_documento" name="reporte.numero_documento" value="{{reporte.numero_documento}}" required>
+
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="reporte.fecha" name="reporte.fecha" value="{{reporte.fecha}}">
+
+        <label for="asunto">asunto:</label>
+        <input type="text" id="reporte.asunto" name="reporte.asunto" value="{{reporte.asunto}}" required>
+
+        <label for="fuente">fuente:</label>
+        <input type="text" id="reporte.fuente" name="reporte.fuente" value="{{reporte.fuente}}" required>
+
+        <label for="temas">temas:</label>
+        <input type="text" id="reporte.temas" name="reporte.temas" value="{{reporte.temas}}" required>
+
+        <label for="lugar">lugar:</label>
+        <input type="text" id="reporte.lugar" name="reporte.lugar" value="{{reporte.lugar}}" required>
+
+        <label for="latitud">latitud:</label>
+        <input type="number" step="0.000001" id="reporte.latitud" name="reporte.latitud"  value="{{reporte.latitud}}" required>
+ 
+        <label for="longitud">longitud:</label>
+        <input type="number" step="0.000001" id="reporte.longitud" name="reporte.longitud" value="{{reporte.longitud}}" required>
+
+        <label for="informacion">informacion:</label>
+        <textarea type="text" id="reporte.informacion" name="reporte.informacion">{{reporte.informacion}}</textarea>
+
+        <label for="resumen">resumen:</label>
+        <textarea type="text" id="reporte.resumen">{{reporte.resumen}}</textarea>
+
+        <button type="submit">Enviar</button>
+    
+    
+    </form>
+
+</body>
+</html>
+

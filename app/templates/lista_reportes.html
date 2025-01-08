@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reprotes</title>
+    <style>
+        /* Contenedor flexible */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="container"> Listado de Reportes</h1>
+    {% for value in lista_reportes %}
+    <tbody>
+        <table>
+            <thead>
+                <tr>
+                    <h3> Reportes Nº {{value.numero_documento}}</h3>
+                    <p id="pk_original">pk: {{value.pk}}</p>
+                    <p>Fecha: {{value.fecha}}</p>
+                    <p>Asunto: {{value.asunto}}</p>
+                    <p>Fuente: {{value.fuente}}</p>
+                    <p>Temas: {{value.temas}}</p>
+                    <p>Lugar: {{value.lugar}}</p>
+                    <p>Latitud: {{value.latitud}}</p>
+                    <p>Longitud: {{value.longitud}}</p>
+                    <p>Informacion: {{value.informacion}}</p>
+                    <p>Resumen: {{value.resumen}}</p>
+                    <a href="/reportes,{{value.pk}}">Referencia</a>
+                </tr>
+
+            </thead>
+        </table>
+    </tbody>
+
+    {% endfor %}
+
+
+</body>
+</html>
